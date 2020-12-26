@@ -46,6 +46,7 @@ print(f'{r = }')
 '''
 
 # Create you own protocols and object system
+'''
 from inspect import signature
 
 class Resistor:
@@ -69,4 +70,15 @@ class Potentiometer(Resistor):
 
 r = Potentiometer('10-232-1412', 'honhai', 15, 10, 20)
 print(f'{r = }')
+'''
 
+# dataclasses
+from dataclasses import dataclass
+@dataclass
+class Resistor:
+    number: str
+    manufacturer: str
+    resistance: float
+
+r = Resistor('10-232-1412', 'honhai', 15)
+print(f'{r = }')

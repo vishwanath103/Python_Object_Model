@@ -14,4 +14,6 @@ A repo to maintain the code for learning Python Object Module referred from <a h
     1. To implement protocols
     2. __repr__ method to give a human understanble representation
     3. We can use signature method from inspect module to identify the class and its respective feilds to be printed out (helpful in printing subclasses)
+3. Usage of dataclasses
+    1. Module to automatically add generated special methods such as __init__() and __repr__() to the user defined classes
 	
