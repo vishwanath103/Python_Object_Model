@@ -10,3 +10,8 @@ A repo to maintain the code for learning Python Object Module referred from <a h
         1. Takes a list of enities (Resistor)
         2. Extracts the information and stores in a Dataframe, which enables to perform operations effeciently
         3. __getitem__ constructs the entity(Resistor) for the required product
+2. Basic Object Model
+    1. To implement protocols
+    2. __repr__ method to give a human understanble representation
+    3. We can use signature method from inspect module to identify the class and its respective feilds to be printed out (helpful in printing subclasses)
+	
