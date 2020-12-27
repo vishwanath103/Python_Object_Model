@@ -73,6 +73,7 @@ print(f'{r = }')
 '''
 
 # dataclasses
+"""
 from dataclasses import dataclass
 @dataclass
 class Resistor:
@@ -82,3 +83,43 @@ class Resistor:
 
 r = Resistor('10-232-1412', 'honhai', 15)
 print(f'{r = }')
+
+# the protocols create a vocabulary
+
+class Network:
+    def __init__(self, *connections):
+        self.connections = connections
+        self.elements = {x.number: x for uv in connections
+                                        for x in uv if x is not None}
+    def __len__(self):
+        return len(self.elements)
+
+    def __getitem__(self, number):
+        return self.elements[number]
+"""
+
+# Property decorators
+"""
+class Resistor:
+    def __init__(self, number, manufacturer, resistance=10):
+        self.number, self.manufacturer, self.resistance = number, manufacturer, resistance
+
+    @property
+    def resistance(self):
+        return self._resistance
+
+    @resistance.setter
+    def resistance(self, value):
+        if value < 0:
+            raise ValueError('resistance must be positive')
+        self._resistance = value
+
+r = Resistor('10-232-1412', 'honhai', 10)
+r.resistance = -10
+"""
+
+# Python disassembler
+from dis import dis
+def f():
+    return x+y
+dis(f)
